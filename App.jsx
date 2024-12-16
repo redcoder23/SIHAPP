@@ -10,6 +10,8 @@ import AccountScreen from "./src/screens/AccountScreen";
 import FightCase from "./src/screens/FightCase";
 import GameScreen from "./src/screens/GameScreen";
 import ChatbotScreen from "./src/screens/ChatbotScreen";
+import SentimentScreen from "./src/screens/SentimentScreen";
+import CrosswordScreen from "./src/screens/CrosswordScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +31,8 @@ const App = () => {
         <Stack.Screen name="Account" component={AccountScreen}/>
         <Stack.Screen name='Fight' component={FightCase}/>
         <Stack.Screen name='GameScreen' component={GameScreen} />
+        <Stack.Screen name='sentiment' component={SentimentScreen}/>
+        <Stack.Screen name='Crossword' component={CrosswordScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

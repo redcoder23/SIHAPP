@@ -17,7 +17,7 @@ const ChatbotScreen = () => {
   const [loading, setLoading] = useState(false);
 
   // Replace this with your ngrok URL from Colab
-  const OLLAMA_API_URL = 'https://40cf-35-233-132-156.ngrok-free.app/chat';
+  const OLLAMA_API_URL = 'https://7bb1-34-145-41-237.ngrok-free.app/chat';
 
   const handleSend = async () => {
     if (!userInput.trim()) return;

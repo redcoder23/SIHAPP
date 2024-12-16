@@ -13,8 +13,6 @@ const WelcomeScreen = ({ navigation, route }) => {
     }
   };
 
-
-
   return (
     <View style={styles.container}>
       {/* Top Image */}
@@ -22,44 +20,29 @@ const WelcomeScreen = ({ navigation, route }) => {
 
       {/* Translucent Box */}
       <ScrollView contentContainerStyle={styles.translucentBox}>
-        <Text style={styles.heading}>Welcome</Text>
+        <Text style={styles.heading}>Nagrik Aur Samvidhan</Text>
 
         {/* Buttons */}
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => handleNavigation('GameScreen')}
-        >
-          <Text style={styles.buttonText}>Games</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => handleNavigation('Forums')}
-        >
-          <Text style={styles.buttonText}>Forums</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => handleNavigation('The Constitution')}
-        >
-          <Text style={styles.buttonText}>The Constitution</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => handleNavigation('Account')}
-        >
-          <Text style={styles.buttonText}>Your Account</Text>
-        </TouchableOpacity>
-
-        {/* New Chatbot Button */}
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => handleNavigation('Chatbot')}
-        >
-          <Text style={styles.buttonText}>Chatbot</Text>
-        </TouchableOpacity>
+        {[
+          { title: 'Interactive Storytelling', screen: 'Fight' },
+          { title: 'Crossword', screen: 'Crossword' },
+          { title: 'Sentiment Analysis', screen: 'sentiment' },
+          'Account', 
+          'Chatbot'
+        ].map((item) => {
+          const screen = typeof item === 'string' ? item : item.screen;
+          const title = typeof item === 'string' ? item : item.title;
+          
+          return (
+            <TouchableOpacity
+              key={title}
+              style={styles.button}
+              onPress={() => handleNavigation(screen)}
+            >
+              <Text style={styles.buttonText}>{title}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </ScrollView>
     </View>
   );
@@ -70,10 +53,10 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5', // Light background
+    backgroundColor: '#ffffff', // White background
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingVertical: 20, // Add vertical padding
+    paddingVertical: 20,
   },
   image: {
     width: '100%',
@@ -82,35 +65,36 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   translucentBox: {
-    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Translucent black background
-    width: '100%',
+    width: '90%', // Adjusted width for better margins
     borderRadius: 15,
     padding: 20,
     alignItems: 'center',
-    elevation: 8,
+    justifyContent:'center'
   },
   heading: {
-    fontSize: 28,
-    color: '#fff', // White text
+    fontSize: 40,
+    color: '#000', // Black text
     fontWeight: 'bold',
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#4CAF50', // Green button
-    width: '80%',
-    borderRadius: 30,
+    backgroundColor: '#686D76', // Green button
+    width: 250, 
+    height:60,// Full width for buttons
+    borderRadius: 10,
     paddingVertical: 12,
-    marginVertical: 10,
+    marginVertical: 10, // Increased margin for better spacing
     alignItems: 'center',
+    alignSelf:'center',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
+    shadowOffset: { width: 10, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
     elevation: 5,
   },
   buttonText: {
-    color: '#fff', // White text
-    fontSize: 18,
+    color: '#000000', // White text
+    fontSize: 20,
     fontWeight: '600',
   },
 });

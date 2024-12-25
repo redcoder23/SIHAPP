@@ -1,5 +1,5 @@
-
 🚀 Welcome to  React Native Project
+
 Welcome to an exciting new React Native app built with the React Native Community CLI! This project is designed to help you get started with mobile app development quickly and easily. Whether you're new to React Native or an experienced developer, this guide will walk you through every step to get your app up and running!
 
 Getting Started with Your New App
